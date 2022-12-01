@@ -26,5 +26,3 @@ def test_google_search_false():
 
     browser.element('name="q"').should(be.blank).type(neg_search).press_enter()
     browser.element('[class="gLFyf"]').should(have.text(neg_search_result))
-
-
