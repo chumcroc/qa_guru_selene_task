@@ -16,13 +16,11 @@ def test_google_search_true(open_browser):
     browser.element('[id="search"]').should(have.text(pos_search_out))
 
 
-def test_google_search_false():
+def test_google_search_false(open_browser):
     """Вводим переменную neg_search со значением 'dsadsadadsadx'"""
 
     neg_search = 'dsadsadadsadx'
     neg_search_result = f'Результатов с именем "{neg_search}" не найдено'
-
-    """ """
 
     browser.element('name="q"').should(be.blank).type(neg_search).press_enter()
     browser.element('[class="gLFyf"]').should(have.text(neg_search_result))
