@@ -6,16 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture()
-def config_driver():
-    browser.config.driver = webdriver.Chrome(ChromeDriverManager().install())
-    return browser.config.driver
-
-
-@pytest.fixture()
-def config_browser_size():
-    browser.driver.set_window_size(700, 600)
-
-
-@pytest.fixture()
-def open_browser(config_driver, config_browser_size):
+def open_browser():
+    browser.config.window_width = 600
+    browser.config.window_height = 800
     browser.open('https://google.com')
