@@ -19,8 +19,8 @@ def test_google_search_true(open_browser):
 def test_google_search_false(open_browser):
     """Вводим переменную neg_search со значением 'dsadsadadsadx'"""
 
-    neg_search = 'dsadsadadsadx'
-    neg_search_result = f'Результатов с именем "{neg_search}" не найдено'
+    neg_search = 'ajdasjadsjkdsakld dsaldjsald ld alda jsakd'
+    neg_search_result = f'Your search - {neg_search} - did not match any documents.'
 
-    browser.element('name="q"').should(be.blank).type(neg_search).press_enter()
-    browser.element('[class="gLFyf"]').should(have.text(neg_search_result))
+    browser.element('[name="q"]').should(be.blank).type(neg_search).press_enter()
+    browser.element('[id="rcnt"]').should(have.text(neg_search_result))
