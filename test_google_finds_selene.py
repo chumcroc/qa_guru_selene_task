@@ -5,7 +5,7 @@ from selene import be, have
 
 def test_google_search_true(open_browser):
     pos_search_in = 'selene'
-    pos_search_out = 'yashaka/selene: User-oriented Web UI browser tests in Python'
+    pos_search_out = 'Selene was the ancient Greek Titan goddess'
     browser.element('[name="q"]').should(be.blank).type(pos_search_in).press_enter()
     browser.element('[id="search"]').should(have.text(pos_search_out))
 
